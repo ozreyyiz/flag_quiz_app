@@ -1,4 +1,5 @@
 import 'package:flag_quiz/pages/mainpage.dart';
+import 'package:flag_quiz/pages/mainpageup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flag Quiz',
-      home: MainPage(),
+      home: MainPageUp(),
     );
   }
 }
