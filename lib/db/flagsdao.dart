@@ -6,7 +6,7 @@ class Flagsdao {
     var db = await DbHelper.dbAccess();
 
     List<Map<String, dynamic>> maps =
-        await db.rawQuery("SELECT * FROM bayraklar ORDER BY RANDOM() LIMIT 4");
+        await db.rawQuery("SELECT * FROM bayraklar ORDER BY RANDOM() LIMIT 10");
 
     return List.generate(maps.length, (i) {
       var line = maps[i];
@@ -19,7 +19,7 @@ class Flagsdao {
     var db = await DbHelper.dbAccess();
 
     List<Map<String, dynamic>> maps = await db.rawQuery(
-        "SELECT * FROM bayraklar WHERE bayrak_id!=$bayrak_id ORDER BY RANDOM() LIMIT 3");
+        "SELECT * FROM bayraklar WHERE bayrak_id!=$bayrak_id ORDER BY RANDOM() LIMIT 9");
 
     return List.generate(maps.length, (i) {
       var line = maps[i];

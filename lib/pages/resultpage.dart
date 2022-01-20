@@ -1,3 +1,4 @@
+import 'package:flag_quiz/pages/mainpageup.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatefulWidget {
@@ -25,16 +26,17 @@ class _ResultPageState extends State<ResultPage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              "${widget.correctAnswer} DOĞRU ${4 - widget.correctAnswer} YANLIŞ",
+              "${widget.correctAnswer} DOĞRU ${10 - widget.correctAnswer} YANLIŞ",
               style: TextStyle(fontSize: 30),
             ),
             Text(
-              "% ${widget.correctAnswer * 100 / 4} BAŞARI",
+              "% ${widget.correctAnswer * 100 / 10} BAŞARI",
               style: TextStyle(fontSize: 30, color: Colors.purpleAccent),
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => MainPageUp()));
                 },
                 child: Text("Again"))
           ],

@@ -79,7 +79,7 @@ class _MainPageUpState extends State<MainPageUp> {
                         "https://cdn.pixabay.com/photo/2013/07/12/17/18/colosseum-151985__340.png",
                     targetPage: Level3(),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 40),
                 ],
               ),
             ],

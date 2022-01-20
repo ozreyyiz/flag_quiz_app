@@ -51,7 +51,6 @@ class _QuizPageState extends State<QuizPage> {
     buttonCtext = allOptions.elementAt(2).flag_name;
     buttonDtext = allOptions.elementAt(3).flag_name;
 
-
     setState(() {});
   }
 
@@ -78,6 +77,7 @@ class _QuizPageState extends State<QuizPage> {
       wrongCount = wrongCount + 1;
     }
   }
+
   @override
   void initState() {
     super.initState();
@@ -86,9 +86,6 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double h = size.height;
-    double w = size.width;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
