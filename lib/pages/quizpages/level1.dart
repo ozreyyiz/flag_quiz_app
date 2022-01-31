@@ -3,13 +3,13 @@ import 'dart:collection';
 import 'package:flag_quiz/constant.dart';
 import 'package:flag_quiz/db/flagsdao.dart';
 import 'package:flag_quiz/models/flags.dart';
+import 'package:flag_quiz/pages/mainpageup.dart';
 import 'package:flag_quiz/pages/resultpage.dart';
 import 'package:flag_quiz/widgets/quiz_answer_button.dart';
 import 'package:flutter/material.dart';
 
 class Level1 extends StatefulWidget {
   const Level1({Key? key}) : super(key: key);
-
 
   @override
   _Level1State createState() => _Level1State();
@@ -25,7 +25,8 @@ class _Level1State extends State<Level1> {
   int wrongCount = 0;
   int questionCount = 0;
 
-  String flagPhotoName = "turkey.png";
+  String flagPhotoName =
+      "https://file.wikipediam.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/188px-Flag_of_Denmark.svg.png";
   String buttonAtext = "";
   String buttonBtext = "";
   String buttonCtext = "";
@@ -107,7 +108,12 @@ class _Level1State extends State<Level1> {
                   Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MainPageUp()));
+                        },
                         icon: Icon(Icons.close),
                         iconSize: 40,
                         color: mainTextColor,
@@ -119,10 +125,10 @@ class _Level1State extends State<Level1> {
                     child: Container(
                       height: size.height / 5,
                       width: size.width / 2,
-                      child: Image.asset(
-                        "assets/$flagPhotoName",
-                        fit: BoxFit.cover,
-                      ),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage("$flagPhotoName"),
+                              fit: BoxFit.cover)),
                     ),
                   ),
                   Container(
@@ -146,7 +152,6 @@ class _Level1State extends State<Level1> {
                           questionCountController();
                         },
                       ),
-                      
                       QuizAnswerButton(
                         size: size,
                         countryName: buttonBtext,

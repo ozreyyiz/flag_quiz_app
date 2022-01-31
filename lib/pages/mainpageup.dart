@@ -21,7 +21,7 @@ class _MainPageUpState extends State<MainPageUp> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 70),
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Stack(
             children: [
               Column(
@@ -71,7 +71,7 @@ class _MainPageUpState extends State<MainPageUp> {
                   MainPageBox(
                     quizTypeBoxHeight: quizTypeBoxHeight,
                     quizTypeBoxWidth: quizTypeBoxWidth,
-                    textHeader: "Civilizations",
+                    textHeader: "Empires",
                     textLevel: "3",
                     boxColorOne: Color(0xffA48ED1),
                     boxColorTwo: Color(0xffF9C0EA),

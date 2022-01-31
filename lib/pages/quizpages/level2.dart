@@ -1,5 +1,8 @@
+import 'dart:collection';
+
 import 'package:flag_quiz/constant.dart';
 import 'package:flag_quiz/db/flagsdao.dart';
+import 'package:flag_quiz/db/world_flagsdao.dart';
 import 'package:flag_quiz/models/flags.dart';
 import 'package:flag_quiz/pages/mainpageup.dart';
 import 'package:flag_quiz/pages/resultpage.dart';
@@ -17,7 +20,7 @@ class Level2 extends StatefulWidget {
 class _Level2State extends State<Level2> {
   var questions = <Flag>[];
   var wrongOptions = <Flag>[];
-  var allOptions = <Flag>[];
+  var allOptions = HashSet<Flag>();
   late Flag liveQuestions;
 
   int correctCount = 0;
@@ -25,7 +28,7 @@ class _Level2State extends State<Level2> {
   int questionCount = 0;
 
   String flagPhotoName =
-      "https://media.istockphoto.com/photos/close-up-of-usa-flag-picture-id511092533";
+      "https://file.wikipediam.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/188px-Flag_of_Canada_%28Pantone%29.svg.png";
   String buttonAtext = "";
   String buttonBtext = "";
   String buttonCtext = "";
@@ -34,7 +37,7 @@ class _Level2State extends State<Level2> {
   Future<void> loadQuestions() async {
     liveQuestions = questions[questionCount];
     flagPhotoName = liveQuestions.flag_photo;
-    wrongOptions = await Flagsdao().getFalseFlags(liveQuestions.flag_id);
+    wrongOptions = await WorldFlagsDao().getFalseFlags(liveQuestions.flag_id);
 
     allOptions.clear();
     allOptions.add(liveQuestions);
@@ -51,7 +54,7 @@ class _Level2State extends State<Level2> {
   }
 
   Future<void> getQuestions() async {
-    questions = await Flagsdao().getFlags();
+    questions = await WorldFlagsDao().getFlags();
     loadQuestions();
   }
 
@@ -124,13 +127,18 @@ class _Level2State extends State<Level2> {
                   child: Container(
                     height: size.height / 5,
                     width: size.width / 2,
-                    child: Image.asset("assets/$flagPhotoName"),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage("$flagPhotoName"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 Container(
                   width: size.width / 1.5,
                   child: Text(
-                    "Question $questionCount of 10",
+                    "Question ${questionCount + 1} of 10",
                     style: TextStyle(
                       color: mainTextColor,
                       fontSize: 20,
