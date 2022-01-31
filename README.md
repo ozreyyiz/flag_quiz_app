@@ -1,16 +1,12 @@
 # flag_quiz
 
-A new Flutter project.
+A new Flutter Quiz app project.
 
-## Getting Started
+## View the Project
 
-This project is a starting point for a Flutter application.
+![Screenshot_1643635292](https://user-images.githubusercontent.com/83778712/151801675-921e5216-ecd6-4eee-b49a-0a2ae9062fc8.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1643635478](https://user-images.githubusercontent.com/83778712/151801697-38cdb26e-e121-4a32-b916-3705c90d837a.png)
+![Screenshot_1643635494](https://user-images.githubusercontent.com/83778712/151801701-81907f1c-8846-4272-ac55-41b9ae0344eb.png)
+![Screenshot_1643635297](https://user-images.githubusercontent.com/83778712/151801704-390bdcd1-3935-46ee-8ccb-0a41b66afb15.png)
+![Screenshot_1643635306](https://user-images.githubusercontent.com/83778712/151801709-979fa2eb-ac4d-4686-bf96-95bd6e66f6c9.png)
