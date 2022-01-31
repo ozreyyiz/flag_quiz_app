@@ -1,4 +1,3 @@
-import 'package:flag_quiz/pages/mainpage.dart';
 import 'package:flag_quiz/pages/mainpageup.dart';
 import 'package:flutter/material.dart';
 

@@ -99,7 +99,7 @@ class _Level3State extends State<Level3> {
               height: size.height,
               width: size.width,
               decoration: BoxDecoration(
-                color: level1mainColor,
+                color: level3mainColor,
               ),
             ),
             Padding(
